@@ -3,6 +3,7 @@ gamesdir = $(prefix)/games
 
 AM_CFLAGS = @SDL_CFLAGS@                                           \
             @SDLMIXER_CFLAGS@                                      \
+            -fcommon \
             -I$(top_srcdir)/textscreen -I$(top_srcdir)/src
 
 noinst_LIBRARIES = libsetup.a
@@ -42,4 +43,3 @@ setup_icon.c : $(top_builddir)/data/setup.png
 	$(top_builddir)/data/convert-icon $(top_builddir)/data/setup.png $@
 
 endif
-

@@ -14,9 +14,10 @@ execgames_SCRIPTS = $(SETUP_BINARIES)
 AM_CFLAGS = -I$(top_srcdir)/textscreen            \
             -I$(top_srcdir)/opl                   \
             -I$(top_srcdir)/pcsound               \
-            @SDLMIXER_CFLAGS@ @SDLNET_CFLAGS@    
+            -fcommon \
+            @SDLMIXER_CFLAGS@ @SDLNET_CFLAGS@
 
-AM_LDFLAGS = 
+AM_LDFLAGS =
 
 # Common source files used by absolutely everything:
 
@@ -205,4 +206,3 @@ midiread : midifile.c
 MUS2MID_SOURCES = mus2mid.c memio.c z_native.c i_system.c m_argv.c m_misc.c
 mus2mid : $(MUS2MID_SOURCES)
 	$(CC) -DSTANDALONE -I$(top_builddir) $(CFLAGS) @LDFLAGS@ $(MUS2MID_SOURCES) -o $@
-

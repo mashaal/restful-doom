@@ -1,4 +1,4 @@
-AM_CFLAGS = -I$(top_srcdir)/src @SDL_CFLAGS@ @SDLMIXER_CFLAGS@ @SDLNET_CFLAGS@
+AM_CFLAGS = -I$(top_srcdir)/src @SDL_CFLAGS@ @SDLMIXER_CFLAGS@ @SDLNET_CFLAGS@ -fcommon
 
 noinst_LIBRARIES=libdoom.a
 
@@ -86,4 +86,3 @@ api_obj_descriptions.c
 libdoom_a_SOURCES = $(SOURCE_FILES)                   \
                     $(FEATURE_DEHACKED_SOURCE_FILES)  \
                     $(FEATURE_REST_API_SOURCE_FILES)
-
